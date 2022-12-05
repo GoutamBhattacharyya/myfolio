@@ -1,0 +1,41 @@
+$zero: rem-convert(0);
+@mixin margin ($top:$zero, $right:$zero, $bottom:$zero, $left:$zero) {
+    margin-top: rem-convert($top);
+    margin-right: rem-convert($right);
+    margin-bottom: rem-convert($bottom);
+    margin-left: rem-convert($left);
+}
+
+@mixin font-info (
+        $font-style:normal,
+        $font-variant: normal,
+        $font-weight:normal,
+        $font-size:$smallest,
+        $line-height:$line-height-normal,
+        $font-family: $font-stack) 
+    {   
+        font-style: $font-style;
+        font-variant: $font-variant;
+        font-weight: $font-weight;
+        font-size: rem-convert($font-size);        
+        line-height: rem-convert($line-height);
+        font-family: $font-family;
+}
+
+@mixin radious ($radious: $radious-small) {
+   border-radius: rem-convert($radious); 
+}
+
+@mixin padding-all ($top, $right, $bottom, $left) {
+    padding-top: rem-convert($top);
+    padding-right: rem-convert($right);
+    padding-bottom: rem-convert($bottom);
+    padding-left: rem-convert($left);
+}
+
+@mixin margin-all ($top, $right, $bottom, $left) {
+    margin-top: rem-convert($top);
+    margin-right: rem-convert($right);
+    margin-bottom: rem-convert($bottom);
+    margin-left: rem-convert($left);
+}

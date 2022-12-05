@@ -1,0 +1,7 @@
+.myfolio {
+    &-about {
+        @include padding-all(50, 30, 20, 30);
+        border-right: 1px solid $border-color;
+        color: $lightest;
+    }
+}

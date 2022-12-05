@@ -1,0 +1,6 @@
+.myfolio {
+    &-testimonial {
+        @include padding-all(50, 30, 20, 30);
+        color: $lightest; 
+    }
+}

@@ -1,0 +1,11 @@
+.myfolio {
+    &-contact-section {
+        @include padding-all(50, 30, 20, 30);
+    }
+    &-error {
+        display: none;
+        &.-show {
+            display: block;
+        }
+    }
+}

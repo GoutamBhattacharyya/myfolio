@@ -1,0 +1,17 @@
+.myfolio {
+    &-btn {
+        @include padding-all(8, 22, 8, 22);
+        @include radious($radious-mid);
+        @include font-info($font-size:$small, $font-weight: bold);
+        color: $primary;
+        background: $button-primary;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    &-image-button {
+        position: absolute;
+        bottom: rem-convert(-14);
+        left: rem-convert(25);
+    }
+}

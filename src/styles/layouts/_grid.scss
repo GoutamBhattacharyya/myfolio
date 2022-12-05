@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+}
+.myfolio {
+    &-main-container {
+        display: flex;
+    }
+    &-left-panel {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &-right-panel {
+        background: $primary;
+        display: flex;
+        justify-content: center;
+        flex: 0 0 36%;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+    &-top-panel {
+        display: flex;        
+    }
+    &-bottom-panel {
+        display: flex;
+    }
+}

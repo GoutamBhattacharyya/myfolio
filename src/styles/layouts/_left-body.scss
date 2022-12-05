@@ -1,0 +1,16 @@
+.myfolio {
+    &-user-info {
+        align-self: center;
+        text-align: center;
+    }
+    &-user-name {
+        h1 {
+            line-height: rem-convert(0);
+        }
+        p {
+            @include padding-all(0, 0, 0, 0);
+            @include margin-all(0, 0, 0, 0);
+            color: $primary;
+        }
+    }
+}

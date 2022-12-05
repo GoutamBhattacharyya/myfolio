@@ -1,0 +1,9 @@
+.myfolio {
+    &-avatar {
+        @include radious(162);
+        width: rem-convert(162);
+        height: rem-convert(162);
+        overflow: hidden;
+        margin: 0 auto;      
+    }
+}

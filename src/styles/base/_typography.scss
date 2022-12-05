@@ -1,0 +1,27 @@
+body,
+html {
+    padding: rem-convert($zero);
+    margin: rem-convert($zero)
+}
+body,
+html,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-stack;
+}
+h1 {
+    @include font-info($font-weight:300,$font-size:$largest);
+    color: $dark;
+}
+h2 {
+    @include font-info($font-size:$medium);
+}
+p {
+    @include font-info($font-size:$smallest);
+}

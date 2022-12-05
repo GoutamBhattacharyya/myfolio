@@ -1,0 +1,9 @@
+.myfolio {
+    &-top-panel {
+        background: $secondary;
+        height: 30vh;
+        > div {
+            width: 50%;;
+        }
+    }
+}

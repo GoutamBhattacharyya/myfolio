@@ -1,0 +1,17 @@
+.myfolio {
+    &-image-card {
+        @include padding-all(40, 0, 0, 0);
+        @include font-info($font-size: $small);
+        position: relative;
+        color: $lightest;
+    }
+    &-port-image {
+        @include radious($radious-big);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: rem-convert(300);
+        width: 100%;
+        overflow: hidden;
+    }
+}
