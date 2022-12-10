@@ -25,32 +25,40 @@ class ContactForm extends React.Component<{},FormProps> {
             error["username"] = "please enter your user name";
         }
         if(typeof fields["username"] !=="undefined") {
-            if(!fields["username"].match(/^[a-z\s]{0,255}$/i)) {
+            if(!fields["username"].match(/^[a-zA-Z]*$/)) {
                 formValid = false;
-                error["username"] = "please enter your user name";
-                
+                error["username"] = "please enter alphabet charectors";                
             }
+        }
+        if(!fields["email"]){
+            formValid = false;
+            error["email"] = "Please enter your email address";
+        }
+        if(typeof fields["email"] !=="undefined") {
+            if(!fields["email"].match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+                formValid = false;
+                error["email"] = "Please enter a valid email";
+            }
+        }
+        if(!fields["textarea"]){
+            formValid = false;
+            error["textarea"] = "Please add your comments";
         }
         this.setState({error:error});
         return(formValid);
     }
     submitRegistration(e:any){
         e.preventDefault();
-        //console.log(this.validForm());
         if(this.validForm()){
             let localObj:any = {};
             localObj["username"] = "";
-            console.log(localObj);
             this.setState({fields:localObj});
-            console.log(this.state.fields) 
         }        
     }
     handelChange(e:any){
          const fields = this.state.fields;
-         console.log(typeof(fields));
          fields[e.target.name] = e.target.value;
          this.setState({fields});
-         console.log(this.state.fields);
     }
     render(): React.ReactNode {
         return (
@@ -58,13 +66,15 @@ class ContactForm extends React.Component<{},FormProps> {
                 <form onSubmit={this.submitRegistration} method="post">
                     <fieldset>                        
                         <input type="text" name="username" placeholder="Name" value={this.state.fields.username} onChange= {this.handelChange} />
-                        <div className={`"myfolio-error ${this.state.error.username!==undefined?"-show":""}`}>{this.state.error.username}</div>
+                        <span className="myfolio-error">{this.state.error.username}</span>
                     </fieldset>
                     <fieldset>
-                        <input type="email" name="email" placeholder="Email" value={this.state.fields.email} onChange={this.handelChange} />
+                        <input type="text" name="email" placeholder="Email" value={this.state.fields.email} onChange= {this.handelChange} />
+                        <span className="myfolio-error">{this.state.error.email}</span>
                     </fieldset>
                     <fieldset>
                         <textarea name="textarea" placeholder="Write Your Requirment" value={this.state.fields.textarea} onChange={this.handelChange} />
+                        <span className="myfolio-error">{this.state.error.textarea}</span>
                     </fieldset>
                     <input type={"submit"} className="myfolio-btn" />
                 </form>

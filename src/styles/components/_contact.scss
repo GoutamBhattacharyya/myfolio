@@ -3,9 +3,8 @@
         @include padding-all(50, 30, 20, 30);
     }
     &-error {
-        display: none;
-        &.-show {
-            display: block;
-        }
+        @include font-info();      
+        display: block;
+        color: $button-primary;
     }
 }
